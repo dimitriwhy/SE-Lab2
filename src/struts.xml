@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+<package name="default" extends="struts-default" namespace="/">
+<action name="hello" class="lab2.HelloWorld" method="execute">
+<result name="success">/HelloWorld.jsp</result>
+</action>
+<!-- 添加作者 -->
+<action name="addauthor" class="lab2.Author" method="addAuthor">
+ <result name="success">/success.jsp</result>
+ <result name="error">/error.jsp</result>
+</action>
+<!-- 添加作者前的展示列表 -->
+<action name="queryauthorinfo" class="lab2.Author" method="queryAuthorInfos">
+ <result name="success">/authorinfo.jsp</result>
+ <result name="error">/error.jsp</result>
+</action>
+<!-- 查询作者所著书籍前的展示列表 -->
+<action name="querybookauthorinfo" class="lab2.Author" method="queryBookAuthorInfos">
+ <result name="success">/bookauthorinfo.jsp</result>
+ <result name="error">/error.jsp</result>
+</action>
+<!-- 选择作者，前往添加图书 -->
+ <action name="selectauthor" class="lab2.Book" method="addAuthor">
+ <result name="success">/addbook.jsp</result>
+ <result name="error">/error.jsp</result>
+</action>
+<!-- 选择作者，前往展示作者所著图书 -->
+ <action name="selectbookauthor" class="lab2.Author" method="queryAuthorBooks">
+ <result name="success">/showbooks.jsp</result>
+ <result name="error">/error.jsp</result>
+</action>
+<!-- 添加图书 -->
+ <action name="addbook" class="lab2.Book" method="addBook">
+ <result name="success">/success.jsp</result>
+ <result name="error">/error.jsp</result>
+</action>
+<!-- 展示图书详情 -->
+<action  name="bookdetail" class="lab2.Book" method="bookDetail">
+ <result name="success">/editbook.jsp</result>
+ <result name="error">/error.jsp</result>
+ </action>
+ <!-- 修改图书 -->
+ <action  name="editbook" class="lab2.Book" method="editBook">
+ <result name="success">/success.jsp</result>
+ <result name="error">/error.jsp</result>
+ </action>
+ <!-- 删除图书 -->
+ <action name="deletebook" class="lab2.Book" method="deleteBook">
+ <result name="success">/success.jsp</result>
+ <result name="error">/error.jsp</result>
+ </action>
+ 
+</package>
+</struts>
