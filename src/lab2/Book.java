@@ -18,6 +18,7 @@ public class Book {
 	private String country;
 	
 	public String authorDetail() {
+      /*blablabla*/
 		String ret = "error";
 		Connection conn = null;
 		try {
